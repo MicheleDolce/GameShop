@@ -10,14 +10,13 @@
 <title>GAMESHOP</title>
 </head>
 <body>
-	<f:view>
-		<h1>GAMESHOP</h1>
-		<ul>
-			<li><a href='<c:url value="/faces/newProduct.jsp" />'>Insert
-					a new product</a></li>
-			
-		</ul>
-	</f:view>
+	
+			<li><a href='<c:url value="/faces/autenticaAmministratore.jsp" />'>Login come amministratore</a></li>
+			<li><a href='<c:url value="/faces/autententicaCliente.jsp" />'>Login come cliente</a></li>
+			<h:commandLink action="#{productController.mostraElencoProdotti}
+							"value="Vedi elenco prodotti" />
+		
+
 </body>
 </html>
 

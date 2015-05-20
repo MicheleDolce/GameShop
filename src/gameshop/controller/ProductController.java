@@ -3,7 +3,7 @@ package gameshop.controller;
 import java.util.List;
 
 import gameshop.model.Product;
-import gameshop.model.ProductFacade;
+import gameshop.facade.ProductFacade;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -33,6 +33,15 @@ public class ProductController {
 	
 	@EJB
 	private ProductFacade productFacade;
+	
+	
+
+	
+	public String mostraElencoProdotti() {
+		this.listaProdotti = productFacade.mostraElencoProdotti();
+		return "listaProdotti"; 
+	}
+	
 	
 	
 	
