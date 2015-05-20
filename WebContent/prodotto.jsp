@@ -13,6 +13,11 @@
 		<div>Codice: ${productController.prodotto.codice}</div>
 		<div>Prezzo: ${productController.prodotto.prezzo}</div>
 		<div>Descrizione: ${productController.prodotto.descrizione}</div>
+		<li><h:form>
+					<h:commandLink
+						action="#{productController.mostraElencoProdotti}"
+						value="Torna a elenco prodotti" />
+				</h:form></li>
 	</f:view>
 </body>
 </html>

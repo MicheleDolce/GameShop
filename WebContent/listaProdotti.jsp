@@ -24,6 +24,9 @@
 						<td>${prodotto.prezzo}</td>
 					</tr>
 				</c:forEach>
+				<li><h:form>
+			<li><a
+				href='<c:url value="/faces/index.jsp" />'>Torna a schermata di login</a></li>
 			</table>
 		</h:form>
 
