@@ -10,12 +10,21 @@
 <title>GAMESHOP</title>
 </head>
 <body>
-	
-			<li><a href='<c:url value="/faces/autenticaAmministratore.jsp" />'>Login come amministratore</a></li>
-			<li><a href='<c:url value="/faces/autententicaCliente.jsp" />'>Login come cliente</a></li>
-			<h:commandLink action="#{productController.mostraElencoProdotti}
-							"value="Vedi elenco prodotti" />
-		
+	<f:view>
+		<h1>Game-Shop</h1>
+		<ul>
+			<li><a
+				href='<c:url value="/faces/autenticaAmministratore.jsp" />'>Login
+					come amministratore</a></li>
+			<li><a href='<c:url value="/faces/autententicaCliente.jsp" />'>Login
+					come cliente</a></li>
+			<li><h:form>
+					<h:commandLink
+						action="#{productController.mostraElencoProdotti}"
+						value="Vedi elenco prodotti" />
+				</h:form></li>
+		</ul>
+	</f:view>
 
 </body>
 </html>

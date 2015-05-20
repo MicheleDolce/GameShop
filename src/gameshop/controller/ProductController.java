@@ -42,8 +42,8 @@ public class ProductController {
 		return "listaProdotti"; 
 	}
 	
-	public String trovaProdotto(){
-		this.prodotto = productFacade.trovaProdotto();
+	public String trovaProdotto(Long id){
+		this.prodotto = productFacade.trovaProdotto(id);
 		return "prodotto";
 	}
 	
