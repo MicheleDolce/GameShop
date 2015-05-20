@@ -42,7 +42,10 @@ public class ProductController {
 		return "listaProdotti"; 
 	}
 	
-	
+	public String trovaProdotto(){
+		this.prodotto = productFacade.trovaProdotto();
+		return "prodotto";
+	}
 	
 	
 	//Metodi get e set
