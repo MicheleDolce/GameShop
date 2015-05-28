@@ -10,14 +10,14 @@
 <body>
 <f:view>
 <h:form>
-    <div>User: <h:inputText value="#{administratorController.user}"  
+    <div>User: <h:inputText value="#{administratorController.nome}"  
                      required="true" 
-                     requiredMessage="Il nick è obbligatorio" 
-                     id="user"/> <h:message for="user" />
+                     requiredMessage="nick obbligatorio" 
+                     id="nome"/> <h:message for="nome" />
 	</div>
     <div>Password: <h:inputText value="#{administratorController.password}" 
                      required="true" 
-                     requiredMessage="la password è obbligatoria" 
+                     requiredMessage="password obbligatoria" 
                      id="password"/> <h:message for="password" />
 	</div>
     

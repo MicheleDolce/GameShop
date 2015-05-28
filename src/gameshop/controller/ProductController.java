@@ -16,42 +16,36 @@ public class ProductController {
 	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
-	
 	private String nome;
-	
 	private String codice;
-	
 	private String descrizione;
-	
 	private Float prezzo;
-	
 	private Long quantitaMagazino;
-	
 	private Product prodotto;
-	
 	private List<Product> listaProdotti;
 	
 	@EJB
 	private ProductFacade productFacade;
 	
-	
-
-	
 	public String mostraElencoProdotti() {
-		this.listaProdotti = productFacade.mostraElencoProdotti();
+		this.listaProdotti = productFacade.getAllProducts();
 		return "listaProdotti"; 
 	}
 	
 	public String trovaProdotto(Long id){
-		this.prodotto = productFacade.trovaProdotto(id);
+		this.prodotto = productFacade.getProduct(id);
+		return "prodotto";
+	}
+	
+	public String trovaProdotto(){
+		this.prodotto = productFacade.getProduct(id);
 		return "prodotto";
 	}
 	
 	
 	//Metodi get e set
 	
-	
-	
+		
 	public Long getId() {
 		return id;
 	}
