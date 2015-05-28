@@ -14,9 +14,9 @@
 		<h1>Game-Shop</h1>
 		<ul>
 			<li><a
-				href='<c:url value="/faces/autenticaAmministratore.jsp" />'>Login
+				href='<c:url value="/faces/loginAmministratore.jsp" />'>Login
 					come amministratore</a></li>
-			<li><a href='<c:url value="/faces/autententicaCliente.jsp" />'>Login
+			<li><a href='<c:url value="/faces/loginCliente.jsp" />'>Login
 					come cliente</a></li>
 			<li><h:form>
 					<h:commandLink

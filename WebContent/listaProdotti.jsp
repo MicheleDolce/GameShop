@@ -17,16 +17,17 @@
 				</tr>
 				<c:forEach var="prodotto" items="#{productController.listaProdotti}">
 					<tr>
-						<td><h:commandLink action="#{productController.trovaProdotto}"
+						<td><h:commandLink
+								action="#{productController.trovaProdotto}"
 								value="#{prodotto.nome}">
 								<f:param name="id" value="#{prodotto.id}" />
 							</h:commandLink></td>
 						<td>${prodotto.prezzo}</td>
 					</tr>
 				</c:forEach>
-				<li><h:form>
-			<li><a
-				href='<c:url value="/faces/index.jsp" />'>Torna a schermata di login</a></li>
+
+				<li><a href='<c:url value="/faces/index.jsp" />'>Torna a
+						schermata di login</a></li>
 			</table>
 		</h:form>
 
