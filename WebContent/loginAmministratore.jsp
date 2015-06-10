@@ -19,11 +19,11 @@
     <div>Password: <h:inputText value="#{administratorController.password}" 
                      required="true" 
                      requiredMessage="password obbligatoria" 
-                     id="password"/>   <h:message for="password" />
+                     id="password" > <f:validator validatorId="validatoreUserLoginAmministratore" /> </h:inputText>  <h:message for="password" />
 	</div>
     
 	<div>
-		<h:commandButton value="Submit"  action="/faces/aggiungiProdotto.jsp"/>
+		<h:commandButton value="Submit"  action="/faces/amministrazione.jsp"/>
 	</div>
 	<li><a
 		href= "index.html">Torna alla home</a></li>

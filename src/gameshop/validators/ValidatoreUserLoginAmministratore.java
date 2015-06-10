@@ -18,8 +18,8 @@ public class ValidatoreUserLoginAmministratore implements Validator{
         if(!user.equals("amm")) {
             FacesMessage message = new FacesMessage();
             message.setSeverity(FacesMessage.SEVERITY_ERROR);
-            message.setSummary("user non valido");
-            message.setDetail("user non valido");
+            message.setSummary("input non valido");
+            message.setDetail("input non valido");
             context.addMessage("userForm:user", message);
             throw new ValidatorException(message);
         }
