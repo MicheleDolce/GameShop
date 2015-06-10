@@ -13,12 +13,13 @@
     <div>User: <h:inputText value="#{administratorController.nome}"  
                      required="true" 
                      requiredMessage="nick obbligatorio" 
-                     id="nome"/> <h:message for="nome" />
+                     id="nome" > <f:validator validatorId="validatoreUserLoginAmministratore" /> </h:inputText>  <h:message for="nome" />
+                    
 	</div>
     <div>Password: <h:inputText value="#{administratorController.password}" 
                      required="true" 
                      requiredMessage="password obbligatoria" 
-                     id="password"/> <h:message for="password" />
+                     id="password"/>   <h:message for="password" />
 	</div>
     
 	<div>

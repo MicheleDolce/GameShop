@@ -42,11 +42,11 @@ public class AdministratorController {
 		this.password = password;
 	}
 
-	public AdministratorFacade getAdminFacade() {
+	/*public AdministratorFacade getAdminFacade() {
 		return adminFacade;
 	}
 
 	public void setAdminFacade(AdministratorFacade adminFacade) {
 		this.adminFacade = adminFacade;
-	}
+	}*/
 }
