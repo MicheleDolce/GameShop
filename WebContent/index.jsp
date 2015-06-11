@@ -26,6 +26,9 @@
 			<li><a
 				href='<c:url value="/faces/registraCliente.jsp" />'>Registrazione clienti
 					</a></li>
+					<li><a
+				href='<c:url value="/faces/loginCliente.jsp" />'>Login cliente
+					</a></li>
 		</ul>
 	</f:view>
 

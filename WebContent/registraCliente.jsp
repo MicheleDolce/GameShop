@@ -18,19 +18,19 @@
 									<h:message for="campo obbligatorio" /></div>
 			<div>Giorno di nascita: <h:inputText value="#{userController.giornoDiNascita}" required="true"
 									requiredMessage="campo obbligatorio" id="giornoDiNascita" />
-									<h:message for="cognome" /></div>
+									<h:message for="giornoDiNascita" /></div>
 			<div>Mese di nascita: <h:inputText value="#{userController.meseDiNascita}" required="true"
 									requiredMessage="campo obbligatorio" id="meseDiNascita" />
-									<h:message for="cognome" /></div>
-			<div>Anno di nascita: <h:inputText value="#{userController.meseDiNascita}" required="true"
+									<h:message for="meseDiNascita" /></div>
+			<div>Anno di nascita: <h:inputText value="#{userController.annoDiNascita}" required="true"
 									requiredMessage="campo obbligatorio" id="annoDiNascita" />
 									<h:message for="annoDiNascita" /></div>
 			<div>Indirizzo: <h:inputText value="#{userController.indirizzo}" required="true"
 									requiredMessage="campo obbligatorio" id="indirizzo" />
-									<h:message for="annoDiNascita" /></div>
+									<h:message for="indirizzo" /></div>
 			<div>Email: <h:inputText value="#{userController.email}" required="true"
 									requiredMessage="campo obbligatorio" id="email" />
-									<h:message for="annoDiNascita" /></div>
+									<h:message for="email" /></div>
 			<div>
 				<h:commandButton value="Submit"  action="#{userController.registraUtente}"/>
 			</div>

@@ -2,7 +2,7 @@ package gameshop.controller;
 
 import gameshop.facade.ProductFacade;
 import gameshop.facade.UserFacade;
-import gameshop.model.Cliente;
+import gameshop.model.Utente;
 
 import java.util.Date;
 
@@ -18,15 +18,12 @@ public class UserController {
 	private Long id;
 	private String nome;
 	private String cognome;
-	private int giornoDiNascita;
-	private int meseDiNascita;
-	private int annoDiNascita;
-	private int giornoDiRegistrazione;
-	private int meseDiRegistrazione;
-	private int annoDiRegistrazione;
+	private Float giornoDiNascita;
+	private Float meseDiNascita;
+	private Float annoDiNascita;
 	private String email;
 	private String indirizzo;
-	private Cliente cliente;
+	private Utente cliente;
 	
 	
 	
@@ -53,42 +50,25 @@ public class UserController {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public int getGiornoDiNascita() {
+	public Float getGiornoDiNascita() {
 		return giornoDiNascita;
 	}
-	public void setGiornoDiNascita(int giornoDiNascita) {
+	public void setGiornoDiNascita(Float giornoDiNascita) {
 		this.giornoDiNascita = giornoDiNascita;
 	}
-	public int getMeseDiNascita() {
+	public Float getMeseDiNascita() {
 		return meseDiNascita;
 	}
-	public void setMeseDiNascita(int meseDiNascita) {
+	public void setMeseDiNascita(Float meseDiNascita) {
 		this.meseDiNascita = meseDiNascita;
 	}
-	public int getAnnoDiNascita() {
+	public Float getAnnoDiNascita() {
 		return annoDiNascita;
 	}
-	public void setAnnoDiNascita(int annoDiNascita) {
+	public void setAnnoDiNascita(Float annoDiNascita) {
 		this.annoDiNascita = annoDiNascita;
 	}
-	public int getGiornoDiRegistrazione() {
-		return giornoDiRegistrazione;
-	}
-	public void setGiornoDiRegistrazione(int giornoDiRegistrazione) {
-		this.giornoDiRegistrazione = giornoDiRegistrazione;
-	}
-	public int getMeseDiRegistrazione() {
-		return meseDiRegistrazione;
-	}
-	public void setMeseDiRegistrazione(int meseDiRegistrazione) {
-		this.meseDiRegistrazione = meseDiRegistrazione;
-	}
-	public int getAnnoDiRegistrazione() {
-		return annoDiRegistrazione;
-	}
-	public void setAnnoDiRegistrazione(int annoDiRegistrazione) {
-		this.annoDiRegistrazione = annoDiRegistrazione;
-	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -101,10 +81,10 @@ public class UserController {
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
 	}
-	public Cliente getCliente() {
+	public Utente getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(Utente cliente) {
 		this.cliente = cliente;
 	}
 	

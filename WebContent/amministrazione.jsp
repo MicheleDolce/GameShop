@@ -14,7 +14,7 @@
 <body>
 	<h1>Area amministrazione</h1>
 	<ul>
-		<li><a href='<c:url value="/faces/newProduct.jsp" />'>Aggiungi
+		<li><a href='<c:url value="/faces/aggiungiProdotto.jsp" />'>Aggiungi
 				prodotto al catalogo</a></li>
 
 		<li><a

@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cliente {
+public class Utente {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
@@ -36,7 +36,7 @@ public class Cliente {
 
 	
 	
-	public Cliente(String nome, String cognome, Date dataDiNascita,Date dataDiRegistrazione, String indirizzo, String email) {
+	public Utente(String nome, String cognome, Date dataDiNascita,Date dataDiRegistrazione, String indirizzo, String email) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.dataDiNascita = dataDiNascita;
