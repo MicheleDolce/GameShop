@@ -23,6 +23,9 @@
 						action="#{productController.mostraElencoProdotti}"
 						value="Vedi elenco prodotti" />
 				</h:form></li>
+			<li><a
+				href='<c:url value="/faces/registraCliente.jsp" />'>Registrazione clienti
+					</a></li>
 		</ul>
 	</f:view>
 

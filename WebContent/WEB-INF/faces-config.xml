@@ -9,4 +9,10 @@
     <validator-id>validatoreUserLoginAmministratore</validator-id>
     <validator-class>gameshop.validators.ValidatoreUserLoginAmministratore</validator-class>
 </validator>
+
+<managed-bean>
+    <managed-bean-name>userController</managed-bean-name>
+    <managed-bean-class>gameshop.controller.UserController</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
 </faces-config>
