@@ -15,10 +15,16 @@ public class ProductFacade {
     @PersistenceContext(unitName = "unit-GameShop")
     private EntityManager em;
     
-	public Product creaProdotto(String nome, String codice, String descrizione, Float prezzo,Long quantitaMagazino) {
+	/*public Product creaProdotto(String nome, String codice, String descrizione, Float prezzo,Float quantitaMagazino) {
 		Product prodotto = new Product(nome, codice, descrizione, prezzo, quantitaMagazino);
 		em.persist(prodotto);
 		return prodotto;
+	}*/
+    
+	public Product createProduct(String name, String code, Float price, String description) {
+		Product product = new Product(name, description, price, code);
+		em.persist(product);
+		return product;
 	}
 	
 	public Product getProduct(Long id) {
