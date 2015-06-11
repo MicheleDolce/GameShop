@@ -20,16 +20,22 @@ public class Product {
 	@Column(nullable=false)
 	private Float prezzo;
 	
-	@Column(nullable=false)
-	private Long quantitaMagazino;
+	/*@Column(nullable=false)
+	private Float quantitaMagazino;
 	
-	public Product(String nome, String codice, String descrizione, Float prezzo,Long quantitaMagazino){
+	public Product(String nome, String codice, String descrizione, Float prezzo,Float quantitaMagazino){
 		this.nome = nome;
 		this.codice = codice;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
 		this.quantitaMagazino = quantitaMagazino;
 		
+	}*/
+	public Product(String nome, String codice, Float prezzo, String descrizione){
+		this.nome = nome;
+		this.codice = codice;
+		this.descrizione = descrizione;
+		this.prezzo = prezzo;
 	}
 
 	
@@ -78,20 +84,20 @@ public class Product {
 		this.prezzo = prezzo;
 	}
 
-	public Long getQuantitaMagazino() {
+	/*public Float getQuantitaMagazino() {
 		return quantitaMagazino;
 	}
 
-	public void setQuantitaMagazino(Long quantitaMagazino) {
+	public void setQuantitaMagazino(Float quantitaMagazino) {
 		this.quantitaMagazino = quantitaMagazino;
 	}
-	
+	*/
 	
 	
     // Metodi hasCode  e equals
 	
 	
-	
+/*	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -162,5 +168,5 @@ public class Product {
 				+ ", descrizione=" + descrizione + ", prezzo=" + prezzo
 				+ ", quantitaMagazino=" + quantitaMagazino + "]";
 	}
-
+*/
 }

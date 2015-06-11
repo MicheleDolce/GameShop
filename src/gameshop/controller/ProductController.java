@@ -20,12 +20,17 @@ public class ProductController {
 	private String codice;
 	private String descrizione;
 	private Float prezzo;
-	private Long quantitaMagazino;
+	//private Float quantitaMagazino;
 	private Product prodotto;
 	private List<Product> listaProdotti;
 	
 	@EJB
 	private ProductFacade productFacade;
+	
+	public String createProduct() {
+		this.prodotto = productFacade.createProduct(nome, codice, prezzo, descrizione);
+		return "product"; 
+	}
 	
 	public String mostraElencoProdotti() {
 		this.listaProdotti = productFacade.getAllProducts();
@@ -42,6 +47,11 @@ public class ProductController {
 		return "prodotto";
 	}
 	
+	/*public String creaProdotto(){
+		this.prodotto = productFacade.creaProdotto(nome, codice, descrizione, prezzo, quantitaMagazino);
+		return "product";
+	}
+	*/
 	
 	//Metodi get e set
 	
@@ -76,12 +86,12 @@ public class ProductController {
 	public void setPrezzo(Float prezzo) {
 		this.prezzo = prezzo;
 	}
-	public Long getQuantitaMagazino() {
+/*	public Float getQuantitaMagazino() {
 		return quantitaMagazino;
 	}
-	public void setQuantitaMagazino(Long quantitaMagazino) {
+	public void setQuantitaMagazino(Float quantitaMagazino) {
 		this.quantitaMagazino = quantitaMagazino;
-	}
+	}*/
 	public Product getProdotto() {
 		return prodotto;
 	}
