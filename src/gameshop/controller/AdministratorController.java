@@ -49,4 +49,6 @@ public class AdministratorController {
 	public void setAdminFacade(AdministratorFacade adminFacade) {
 		this.adminFacade = adminFacade;
 	}*/
+	
+	/*commento*/
 }
