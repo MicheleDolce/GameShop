@@ -20,7 +20,13 @@
 		<li><a
 			href='<c:url value="/faces/recuperaIndirizzoCliente.jsp" />'>Recupera
 				indirizzo cliente</a></li>
+				
 	</ul>
+	<f:view>
+	<h:form><h:commandLink
+						action="#{userController.mostraElencoUtenti}"
+						value="Vedi elenco utenti" />
+			</h:form></f:view>
 
 </body>
 </html>

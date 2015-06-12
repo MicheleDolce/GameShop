@@ -44,7 +44,7 @@ public class UserController {
 	public String autenticaUtente(){
 		this.cliente=null;
 		String paginaSuccessiva;
-		this.cliente= userFacade.autenticaUtente(email);
+		this.cliente= userFacade.getUtente(id);
 		if(this.cliente!=null){
 			paginaSuccessiva="areaUtente";
 		}else{
@@ -118,6 +118,30 @@ public class UserController {
 	}
 	public void setCliente(Utente cliente) {
 		this.cliente = cliente;
+	}
+
+	public List<Utente> getListaUtenti() {
+		return listaUtenti;
+	}
+
+	public void setListaUtenti(List<Utente> listaUtenti) {
+		this.listaUtenti = listaUtenti;
+	}
+
+	public UserFacade getUserFacade() {
+		return userFacade;
+	}
+
+	public void setUserFacade(UserFacade userFacade) {
+		this.userFacade = userFacade;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

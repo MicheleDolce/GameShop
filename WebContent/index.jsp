@@ -29,11 +29,8 @@
 					<li><a
 				href='<c:url value="/faces/loginCliente.jsp" />'>Login cliente
 					</a></li>
-					<li><h:form>
-			<h:commandLink
-						action="#{userController.mostraElencoUtenti}"
-						value="Vedi elenco utenti" />
-			</h:form></li>
+					
+			
 		</ul>
 	</f:view>
 

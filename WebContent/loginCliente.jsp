@@ -11,12 +11,13 @@
 <body>
 <f:view>
 <h:form>
-	<div>Email: <h:inputText value="#{userController.email}" required="true"
-									requiredMessage="campo obbligatorio" id="email" />
-									<h:message for="email" /></div>
+	<div>Id: <h:inputText value="#{userController.id}" required="true"
+									requiredMessage="campo obbligatorio" id="id" />
+									<h:message for="id" /></div>
 	<div>
 		<h:commandButton value="Submit"  action="#{userController.autenticaUtente}"/>
 	</div>
+	
 </h:form>
 
 </f:view>
