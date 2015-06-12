@@ -10,15 +10,7 @@
 </head>
 <body>
 <f:view>
-<h:form>
-	<div>Email: <h:inputText value="#{userController.email}" required="true"
-									requiredMessage="campo obbligatorio" id="email" />
-									<h:message for="email" /></div>
-	<div>
-		<h:commandButton value="Submit"  action="#{userController.autenticaUtente}"/>
-	</div>
-</h:form>
-
+	<h> PROVA </h>
 </f:view>
 </body>
 </html>

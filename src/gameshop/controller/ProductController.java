@@ -2,7 +2,7 @@ package gameshop.controller;
 
 import java.util.List;
 
-import gameshop.model.Product;
+import gameshop.model.Prodotto;
 import gameshop.facade.ProductFacade;
 
 import javax.ejb.EJB;
@@ -20,16 +20,16 @@ public class ProductController {
 	private String codice;
 	private String descrizione;
 	private Float prezzo;
-	//private Float quantitaMagazino;
-	private Product prodotto;
-	private List<Product> listaProdotti;
+	private Float quantitaMagazzino;
+	private Prodotto prodotto;
+	private List<Prodotto> listaProdotti;
 	
 	@EJB
 	private ProductFacade productFacade;
 	
-	public String createProduct() {
-		this.prodotto = productFacade.createProduct(nome, codice, prezzo, descrizione);
-		return "product"; 
+	public String creaProdotto() {
+		this.prodotto = productFacade.creaProdotto(nome, codice, descrizione, prezzo,quantitaMagazzino);
+		return "prodotto"; 
 	}
 	
 	public String mostraElencoProdotti() {
@@ -47,11 +47,7 @@ public class ProductController {
 		return "prodotto";
 	}
 	
-	/*public String creaProdotto(){
-		this.prodotto = productFacade.creaProdotto(nome, codice, descrizione, prezzo, quantitaMagazino);
-		return "product";
-	}
-	*/
+
 	
 	//Metodi get e set
 	
@@ -86,22 +82,22 @@ public class ProductController {
 	public void setPrezzo(Float prezzo) {
 		this.prezzo = prezzo;
 	}
-/*	public Float getQuantitaMagazino() {
-		return quantitaMagazino;
+	public Float getQuantitaMagazzino() {
+		return quantitaMagazzino;
 	}
-	public void setQuantitaMagazino(Float quantitaMagazino) {
-		this.quantitaMagazino = quantitaMagazino;
-	}*/
-	public Product getProdotto() {
+	public void setQuantitaMagazzino(Float quantitaMagazzino) {
+		this.quantitaMagazzino = quantitaMagazzino;
+	}
+	public Prodotto getProdotto() {
 		return prodotto;
 	}
-	public void setProdotto(Product prodotto) {
+	public void setProdotto(Prodotto prodotto) {
 		this.prodotto = prodotto;
 	}
-	public List<Product> getListaProdotti() {
+	public List<Prodotto> getListaProdotti() {
 		return listaProdotti;
 	}
-	public void setListaProdotti(List<Product> listaProdotti) {
+	public void setListaProdotti(List<Prodotto> listaProdotti) {
 		this.listaProdotti = listaProdotti;
 	}
 	

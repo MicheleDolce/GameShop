@@ -2,7 +2,7 @@ package gameshop.model;
 import javax.persistence.*;
 import javax.validation.GroupSequence;
 @Entity
-public class Product {
+public class Prodotto {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
@@ -20,18 +20,18 @@ public class Product {
 	@Column(nullable=false)
 	private Float prezzo;
 	
-	/*@Column(nullable=false)
-	private Float quantitaMagazino;
+	@Column(nullable=false)
+	private Float quantitaMagazzino;
 	
-	public Product(String nome, String codice, String descrizione, Float prezzo,Float quantitaMagazino){
+	public Prodotto(String nome, String codice, String descrizione, Float prezzo,Float quantitaMagazino){
 		this.nome = nome;
 		this.codice = codice;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
-		this.quantitaMagazino = quantitaMagazino;
+		this.quantitaMagazzino = quantitaMagazino;
 		
-	}*/
-	public Product(String nome, String codice, Float prezzo, String descrizione){
+	}
+	public Prodotto(String nome, String codice, Float prezzo, String descrizione){
 		this.nome = nome;
 		this.codice = codice;
 		this.descrizione = descrizione;
@@ -84,14 +84,14 @@ public class Product {
 		this.prezzo = prezzo;
 	}
 
-	/*public Float getQuantitaMagazino() {
-		return quantitaMagazino;
+	public Float getQuantitaMagazzino() {
+		return quantitaMagazzino;
 	}
 
-	public void setQuantitaMagazino(Float quantitaMagazino) {
-		this.quantitaMagazino = quantitaMagazino;
+	public void setQuantitaMagazzino(Float quantitaMagazzino) {
+		this.quantitaMagazzino = quantitaMagazzino;
 	}
-	*/
+	
 	
 	
     // Metodi hasCode  e equals

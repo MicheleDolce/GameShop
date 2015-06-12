@@ -2,14 +2,18 @@ package gameshop.controller;
 
 import gameshop.facade.ProductFacade;
 import gameshop.facade.UserFacade;
+import gameshop.model.Prodotto;
 import gameshop.model.Utente;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 public class UserController {
@@ -24,7 +28,7 @@ public class UserController {
 	private String email;
 	private String indirizzo;
 	private Utente cliente;
-	
+	private List<Utente> listaUtenti;
 	
 	
 	
@@ -37,7 +41,35 @@ public class UserController {
 		return "cliente"; 
 	}
 	
+	public String autenticaUtente(){
+		this.cliente=null;
+		String paginaSuccessiva;
+		this.cliente= userFacade.autenticaUtente(email);
+		if(this.cliente!=null){
+			paginaSuccessiva="areaUtente";
+		}else{
+			 FacesMessage msg = new FacesMessage("Errore email errata!", "L'email è incorretta");
+			 msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+			 FacesContext.getCurrentInstance().addMessage(null, msg);
+			 paginaSuccessiva="loginCliente";
+		}
+		
+		return paginaSuccessiva;
+	}
 	
+	public String mostraElencoUtenti(){
+		this.listaUtenti=userFacade.mostraElencoUtenti();
+		return "listaUtenti";
+	}
+	
+	public String trovaUtente(Long id){
+		this.cliente = userFacade.getUtente(id);
+		return "cliente";
+	}
+	public String trovaUtente(){
+		this.cliente = userFacade.getUtente(id);
+		return "cliente";
+	}
 	public String getNome() {
 		return nome;
 	}

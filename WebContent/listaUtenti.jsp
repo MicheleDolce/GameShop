@@ -6,19 +6,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Lista utenti</title>
 </head>
 <body>
 <f:view>
-<h:form>
-	<div>Email: <h:inputText value="#{userController.email}" required="true"
-									requiredMessage="campo obbligatorio" id="email" />
-									<h:message for="email" /></div>
-	<div>
-		<h:commandButton value="Submit"  action="#{userController.autenticaUtente}"/>
-	</div>
-</h:form>
+		<h1>Lista Utenti</h1>
+		<h:form>
+			<table>
+				<tr>
+					<th>Nome</th><th>Email</th>
+				</tr>
+				<c:forEach var="utente" items="#{userController.listaUtenti}">
+					<tr>
+						<td><h:commandLink
+								action="#{userController.trovaUtente}"
+								value="#{utente.nome}">
+								<f:param name="id" value="#{utente.id}" />
+							</h:commandLink></td>
+						<td>${utente.email}</td>
+					</tr>
+				</c:forEach>
 
-</f:view>
+			
+			</table>
+		</h:form>
+		</f:view>
 </body>
 </html>
