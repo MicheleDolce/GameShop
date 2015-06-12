@@ -16,7 +16,8 @@
 	<ul>
 		<li><a href='<c:url value="/faces/aggiungiProdotto.jsp" />'>Aggiungi
 				prodotto al catalogo</a></li>
-
+		<li><a href='<c:url value="/faces/modificaQuantita.jsp" />'>Modifica
+				quantita Prodotto</a></li>
 		<li><a
 			href='<c:url value="/faces/recuperaIndirizzoCliente.jsp" />'>Recupera
 				indirizzo cliente</a></li>
@@ -27,6 +28,11 @@
 			<h:form>
 				<h:commandLink action="#{userController.mostraElencoUtenti}"
 					value="Vedi elenco utenti" />
+			</h:form>
+			<h:form>
+				<h:commandLink
+					action="#{productController.mostraElencoProdottiAmministratore}"
+					value="Vedi elenco prodotti" />
 			</h:form>
 		</f:view>
 

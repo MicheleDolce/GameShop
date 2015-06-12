@@ -28,7 +28,6 @@
 				href='<c:url value="/faces/loginCliente.jsp" />'>Login cliente
 					</a></li>
 					
-			
 		</ul>
 	</f:view>
 

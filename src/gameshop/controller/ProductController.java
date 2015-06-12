@@ -46,11 +46,20 @@ public class ProductController {
 		return "prodotto";
 	}
 	
+	public String trovaProdotto(String codice){
+		this.prodotto = productFacade.getProduct(codice);
+		return "prodotto";
+	}
+	
 	public String trovaProdotto(){
 		this.prodotto = productFacade.getProduct(id);
 		return "prodotto";
 	}
 	
+	public String modificaQuantita(){
+		this.prodotto = productFacade.modificaQuantita(id, quantitaMagazzino);
+		return "prodotto";
+	}
 
 	
 	//Metodi get e set

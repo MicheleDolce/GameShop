@@ -27,8 +27,8 @@
 					</tr>
 				</c:forEach>
 
-				<li><a href='<c:url value="/faces/index.jsp" />'>Torna a
-						schermata di login</a></li>
+				<li><a href='<c:url value="/faces/amministrazione.jsp" />'>Torna ad
+						Area amministratore</a></li>
 			</table>
 		</h:form>
 		</f:view>
