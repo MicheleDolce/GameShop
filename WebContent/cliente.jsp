@@ -14,8 +14,9 @@
 		<div>Cognome: ${userController.cliente.cognome}</div>
 		<div>Indirizzo: ${userController.cliente.indirizzo}</div>
 	</f:view>
-	<h><a href='<c:url value="/index.html" />'>Torna alla home</a></h>
-	
+	<h:form>
+	<li><a href="index.html">Torna alla home</a></li>
+	</h:form>
 	
 </body>
 </html>

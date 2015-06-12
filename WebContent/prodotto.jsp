@@ -8,13 +8,13 @@
 </head>
 <body>
 	<f:view>
-	
+
 		<h1>${productController.prodotto.nome}</h1>
-		<h2>Dettagli</h2>
+		<h2>Dettagli:</h2>
+		<div>Nome: ${productController.prodotto.nome}</div>
 		<div>Codice: ${productController.prodotto.codice}</div>
 		<div>Prezzo: ${productController.prodotto.prezzo}</div>
-		<div>Descrizione: ${productController.prodotto.descrizione}</div>
-		
+		<li><a href="amministrazione.jsp">Torna ad area amministrazione</a></li>
 	</f:view>
 </body>
 </html>

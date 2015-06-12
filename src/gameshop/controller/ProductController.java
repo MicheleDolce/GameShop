@@ -36,6 +36,10 @@ public class ProductController {
 		this.listaProdotti = productFacade.getAllProducts();
 		return "listaProdotti"; 
 	}
+	public String mostraElencoProdottiAmministratore() {
+		this.listaProdotti = productFacade.getAllProducts();
+		return "listaProdottiAmministrazione"; 
+	}
 	
 	public String trovaProdotto(Long id){
 		this.prodotto = productFacade.getProduct(id);

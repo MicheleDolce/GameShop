@@ -16,8 +16,6 @@
 			<li><a
 				href='<c:url value="/faces/loginAmministratore.jsp" />'>Login
 					come amministratore</a></li>
-			<li><a href='<c:url value="/faces/loginCliente.jsp" />'>Login
-					come cliente</a></li>
 			<li><h:form>
 					<h:commandLink
 						action="#{productController.mostraElencoProdotti}"

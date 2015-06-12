@@ -36,6 +36,11 @@
 				<h:commandButton value="Submit"  action="#{userController.registraUtente}"/>
 			</div>
 		</h:form>
+		<h:form>
+		<li><a href="index.html">Torna alla home</a></li>
+		</h:form>
+					
+				
 	</f:view>
 </body>
 </html>

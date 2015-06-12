@@ -19,6 +19,8 @@
 	</div>
 	
 </h:form>
+<h:form><li><a href='<c:url value="/faces/index.jsp" />'>Torna a
+						schermata di login</a></li></h:form>
 
 </f:view>
 </body>
