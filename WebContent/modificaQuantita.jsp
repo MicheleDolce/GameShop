@@ -12,8 +12,8 @@
 	<f:view>
 		<h:form>
 			<div>
-				ID:
-				<h:inputText value="#{productController.id}" required="true"
+				Codice:
+				<h:inputText value="#{productController.codice}" required="true"
 					requiredMessage="Codice obbligatorio" id="codice" />
 				<h:message for="codice" />
 			</div>

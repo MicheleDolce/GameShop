@@ -12,18 +12,11 @@
 	<f:view>
 		<h:form>
 			<div>
-				Name:
+				Nome:
 				<h:inputText value="#{productController.nome}" required="true"
 					requiredMessage="Nome obbligatorio" id="nome" />
 				<h:message for="nome" />
 			</div>
-			<div>
-				Codice:
-				<h:inputText value="#{productController.codice}" required="true"
-					requiredMessage="Codice obbligatorio" id="codice" />
-				<h:message for="codice" />
-			</div>
-
 			<div>
 				Descrizione:
 				<h:inputTextarea value="#{productController.descrizione}"

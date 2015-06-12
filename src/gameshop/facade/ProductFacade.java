@@ -16,11 +16,11 @@ public class ProductFacade {
 	@PersistenceContext(unitName = "unit-GameShop")
 	private EntityManager em;
 
-	public Prodotto creaProdotto(String nome, String codice, String descrizione, Float prezzo,Float quantitaMagazzino) {
+	public Prodotto creaProdotto(String nome, String descrizione, Float prezzo,Float quantitaMagazzino) {
 		Prodotto prodotto = null;
 
 
-			prodotto = new Prodotto(nome, codice, descrizione, prezzo, quantitaMagazzino);
+			prodotto = new Prodotto(nome, descrizione, prezzo, quantitaMagazzino);
 			em.persist(prodotto);
 		
 		return prodotto;
@@ -28,21 +28,16 @@ public class ProductFacade {
 
 	}
 
-	public Prodotto modificaQuantita(Long id, Float quantitaMagazzino){
+	public Prodotto modificaQuantita(Long codice, Float quantitaMagazzino){
 		Prodotto prodotto = null;
 		try {
-			prodotto = getProduct(id);
+			prodotto = getProduct(codice);
 		}catch(Exception e) {}
 		prodotto.setQuantitaMagazzino(quantitaMagazzino);
 		return prodotto;
 		
 	}
-	public Prodotto getProduct(Long id) {
-		Prodotto prodotto = em.find(Prodotto.class, id);
-		return prodotto;
-	}
-
-	public Prodotto getProduct(String codice) {
+	public Prodotto getProduct(Long codice) {
 		Prodotto prodotto = em.find(Prodotto.class, codice);
 		return prodotto;
 	}

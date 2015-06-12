@@ -20,7 +20,7 @@
 						<td><h:commandLink
 								action="#{productController.trovaProdotto}"
 								value="#{prodotto.nome}">
-								<f:param name="id" value="#{prodotto.id}" />
+								<f:param name="codice" value="#{prodotto.codice}" />
 							</h:commandLink></td>
 						<td>${prodotto.prezzo}</td>
 					</tr>

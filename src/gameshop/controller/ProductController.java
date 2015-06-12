@@ -14,11 +14,10 @@ import javax.faces.bean.ManagedProperty;
 @ManagedBean
 public class ProductController {
 	
-	@ManagedProperty(value="#{param.id}")
-	private Long id;
+	@ManagedProperty(value="#{param.codice}")
+	private Long codice;
 	private String nome;
-	private String codice;
-	private String descrizione;
+    private String descrizione;
 	private Float prezzo;
 	private Float quantitaMagazzino;
 	private Prodotto prodotto;
@@ -28,7 +27,7 @@ public class ProductController {
 	private ProductFacade productFacade;
 	
 	public String creaProdotto() {
-		this.prodotto = productFacade.creaProdotto(nome, codice, descrizione, prezzo,quantitaMagazzino);
+		this.prodotto = productFacade.creaProdotto(nome, descrizione, prezzo,quantitaMagazzino);
 		return "prodotto"; 
 	}
 	
@@ -41,23 +40,18 @@ public class ProductController {
 		return "listaProdottiAmministrazione"; 
 	}
 	
-	public String trovaProdotto(Long id){
-		this.prodotto = productFacade.getProduct(id);
-		return "prodotto";
-	}
-	
-	public String trovaProdotto(String codice){
+	public String trovaProdotto(Long codice){
 		this.prodotto = productFacade.getProduct(codice);
 		return "prodotto";
 	}
 	
 	public String trovaProdotto(){
-		this.prodotto = productFacade.getProduct(id);
+		this.prodotto = productFacade.getProduct(codice);
 		return "prodotto";
 	}
 	
 	public String modificaQuantita(){
-		this.prodotto = productFacade.modificaQuantita(id, quantitaMagazzino);
+		this.prodotto = productFacade.modificaQuantita(codice, quantitaMagazzino);
 		return "prodotto";
 	}
 
@@ -65,11 +59,11 @@ public class ProductController {
 	//Metodi get e set
 	
 		
-	public Long getId() {
-		return id;
+	public Long getCodice() {
+		return codice;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setCodice(Long codice) {
+		this.codice = codice;
 	}
 	public String getNome() {
 		return nome;
@@ -77,12 +71,7 @@ public class ProductController {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getCodice() {
-		return codice;
-	}
-	public void setCodice(String codice) {
-		this.codice = codice;
-	}
+	
 	public String getDescrizione() {
 		return descrizione;
 	}

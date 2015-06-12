@@ -6,13 +6,10 @@ public class Prodotto {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private Long id;
+	private Long codice;
 	
 	@Column(nullable=false)
 	private String nome;
-	
-	@Column(nullable=false)
-	private String codice;
 	
 	@Column(length=1000)
 	private String descrizione;
@@ -23,33 +20,25 @@ public class Prodotto {
 	@Column(nullable=false)
 	private Float quantitaMagazzino;
 	
-	public Prodotto(String nome, String codice, String descrizione, Float prezzo,Float quantitaMagazino){
+	public Prodotto(String nome, String descrizione, Float prezzo,Float quantitaMagazino){
 		this.nome = nome;
-		this.codice = codice;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
 		this.quantitaMagazzino = quantitaMagazino;
 		
 	}
-	public Prodotto(String nome, String codice, Float prezzo, String descrizione){
-		this.nome = nome;
-		this.codice = codice;
-		this.descrizione = descrizione;
-		this.prezzo = prezzo;
-	}
 
-	
 	
 	// Metodi get e set
 	
 	
 	
-	public Long getId() {
-		return id;
+	public Long getCodice() {
+		return codice;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setCodice(Long codice) {
+		this.codice = codice;
 	}
 
 	public String getNome() {
@@ -58,14 +47,6 @@ public class Prodotto {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getCodice() {
-		return codice;
-	}
-
-	public void setCodice(String codice) {
-		this.codice = codice;
 	}
 
 	public String getDescrizione() {

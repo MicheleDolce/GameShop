@@ -11,12 +11,11 @@
 
 		<h1>${productController.prodotto.nome}</h1>
 		<h2>Dettagli:</h2>
-		<div>Id: ${productController.prodotto.id}</div>
-		<div>Nome: ${productController.prodotto.nome}</div>
 		<div>Codice: ${productController.prodotto.codice}</div>
+		<div>Nome: ${productController.prodotto.nome}</div>
 		<div>Prezzo: ${productController.prodotto.prezzo}</div>
 		<div>Quantita: ${productController.prodotto.quantitaMagazzino}</div>
-		<li><a href="amministrazione.jsp">Torna ad area amministrazione</a></li>
+		<li><a href="index.jsp">Torna alla home</a></li>
 	</f:view>
 </body>
 </html>
