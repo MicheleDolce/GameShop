@@ -2,6 +2,7 @@ package gameshop.controller;
 
 import gameshop.facade.AdministratorFacade;
 import gameshop.facade.ProductFacade;
+import gameshop.model.Utente;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -14,6 +15,7 @@ public class AdministratorController {
 	private Long id;
 	private String nome;
 	private String password;
+	private Utente admin;
 
 	/*@EJB
 	private AdministratorFacade adminFacade;*/
