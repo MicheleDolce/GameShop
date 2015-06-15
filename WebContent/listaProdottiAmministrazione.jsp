@@ -39,11 +39,15 @@
 body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;color:red;}</style>
 		<!-- Fixed navbar -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<span class="nav navbar-form navbar-right"> <h:form>
+
+					<h:outputLink value='#{request.contextPath}/faces/index.jsp'
+						styleClass="btn btn-success">Logout</h:outputLink>
+				</h:form></span>
+
 			<div class="container">
-				<div class="navbar-header"><h:form>
-					<h:outputLink styleClass="navbar-brand" value='#{request.contextPath}/faces/index.jsp'>GameShop</h:outputLink></h:form>
-				</div>
-	<!--/.nav-collapse -->
+				<div class="navbar-header"></div>
+				<!--/.nav-collapse -->
 			</div>
 		</nav>
 
@@ -67,7 +71,7 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 
 
 				</div>
-			
+
 			</div>
 
 		</div>
@@ -75,28 +79,30 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 		<h:form>
 			<table>
 				<tr>
-					<th>Nome</th><th>Prezzo</th>
+					<th>Nome</th>
+					<th>Prezzo</th>
 				</tr>
 				<c:forEach var="prodotto" items="#{productController.listaProdotti}">
 					<tr>
 						<td><h:commandLink
-								action="#{productController.trovaProdotto}"
+								action="#{productController.trovaProdottoAmministratore}"
 								value="#{prodotto.nome}">
 								<f:param name="codice" value="#{prodotto.codice}" />
 							</h:commandLink></td>
 						<td>${prodotto.prezzo}</td>
 					</tr>
 				</c:forEach>
+				<!--/row-->
 
-				<h:form>
-			<h:commandLink styleClass="btn btn-success"
-				action="amministrazione.jsp" value="Indietro" />
-		</h:form>
 			</table>
 		</h:form>
+		<h:form>
+			<h:commandLink styleClass="btn btn-success"
+				action="faces/amministrazione.jsp" value="Indietro" />
+		</h:form>
 
-<!--/row-->
-		
+
+
 		<hr>
 		<footer>
 			<p>&copy; JuggerDonuts Company 2015</p>

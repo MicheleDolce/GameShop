@@ -45,14 +45,19 @@ public class ProductController {
 		return "prodotto";
 	}
 	
-	public String trovaProdotto(){
+	public String trovaProdottoAmministratore(){
+		this.prodotto = productFacade.getProduct(codice);
+		return "prodottoAmministrazione";
+	}
+	
+	 public String trovaProdotto(){
 		this.prodotto = productFacade.getProduct(codice);
 		return "prodotto";
 	}
 	
 	public String modificaQuantita(){
 		this.prodotto = productFacade.modificaQuantita(codice, quantitaMagazzino);
-		return "prodotto";
+		return "prodottoAmministrazione";
 	}
 
 	

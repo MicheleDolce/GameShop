@@ -12,9 +12,10 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-
+@SessionScoped
 @ManagedBean
 public class UserController {
 	
@@ -69,6 +70,10 @@ public class UserController {
 	public String trovaUtente(){
 		this.cliente = userFacade.getUtente(id);
 		return "cliente";
+	}
+	public String trovaUtenteAmministrazione(){
+		this.cliente = userFacade.getUtente(id);
+		return "clienteAmministrazione";
 	}
 	public String getNome() {
 		return nome;

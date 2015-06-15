@@ -32,18 +32,21 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
 	<f:view>
-	<style type="text/css">
+		<style type="text/css">
 body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;color:red;}</style>
 		<!-- Fixed navbar -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<span class="nav navbar-form navbar-right"> <h:form>
+
+					<h:outputLink value='#{request.contextPath}/faces/index.jsp'
+						styleClass="btn btn-success">Logout</h:outputLink>
+				</h:form></span>
+
 			<div class="container">
-				<div class="navbar-header"><h:form>
-					<h:outputLink styleClass="navbar-brand" value='#{request.contextPath}/faces/index.jsp'>GameShop</h:outputLink></h:form>
-				</div>
-	<!--/.nav-collapse -->
+				<div class="navbar-header"></div>
+				<!--/.nav-collapse -->
 			</div>
 		</nav>
 
@@ -67,18 +70,23 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 
 
 				</div>
-			
+
 			</div>
 
 		</div>
 
-		<h1>${userController.cliente.nome}</h1>
+		<h1>${productController.prodotto.nome}</h1>
 		<h2>Dettagli:</h2>
-		<div>Nome: ${userController.cliente.nome}</div>
-		<div>Cognome: ${userController.cliente.cognome}</div>
-		<div>Id: ${userController.cliente.id}</div>
-		<div>Email: ${userController.cliente.email}</div>
-		
+		<div>Codice: ${productController.prodotto.codice}</div>
+		<div>Nome: ${productController.prodotto.nome}</div>
+		<div>Prezzo: ${productController.prodotto.prezzo}</div>
+		<div>Quantita: ${productController.prodotto.quantitaMagazzino}</div>
+		<!--/row-->
+		 	<h:form>
+						 	<h:commandLink styleClass="btn btn-success"
+									action="faces/amministrazione.jsp"
+									value="Indietro" />
+							</h:form>
 	<!--/row-->
 		
 		<hr>
@@ -98,5 +106,3 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 	</f:view>
 </body>
 </html>
-
-
