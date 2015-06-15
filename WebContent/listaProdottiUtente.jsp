@@ -31,34 +31,19 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-
 
 <body>
 	<f:view>
 		<style type="text/css">
-body {
-	font-weight: bold;
-}
-
-body {
-	background-image: url('img/crysis.jpg') !important;
-	color: red;
-}
-</style>
+body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;color:red;}</style>
 		<!-- Fixed navbar -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<span class="nav navbar-form navbar-right"> <h:form>
 
 					<div>
-						<h:commandLink action="#{userController.logOut}" value="LogOut" />
+						<h:commandLink action="#{userController.logOut}"
+							value="LogOut" />
 					</div>
 				</h:form></span>
 
@@ -92,37 +77,33 @@ body {
 			</div>
 
 		</div>
-	<h1>-----Dettagli Ordine-----</h1>
-			<hr></hr>
-			<div>
-				<table border="1">
+		<h1>Lista Prodotti</h1>
+		<h:form>
+			<table>
+				<tr>
+					<th>Nome</th>
+					<th>Prezzo</th>
+				</tr>
+				<c:forEach var="prodotto" items="#{productController.listaProdotti}">
 					<tr>
-						<th>Nome Prodotto</th>
-						<th>Quantita'</th>
-						<th>Prezzo</th>
+						<td><h:commandLink
+								action="#{productController.trovaProdottoUtente}"
+								value="#{prodotto.nome}">
+								<f:param name="codice" value="#{prodotto.codice}" />
+							</h:commandLink></td>
+						<td>${prodotto.prezzo}</td>
 					</tr>
-					<c:forEach var="rigaOrdine" items="#{ordineController.ordine.righeOrdine}">
-						<tr>
-							<td>${rigaOrdine.prodotto.nome}</td>
-							<td>${rigaOrdine.quantita}</td>
-							<td>${rigaOrdine.prezzoUnitario}</td>
-						</tr>
-					</c:forEach>
-				</table>
-			</div>
+				</c:forEach>
+				<!--/row-->
 
-			<ul><li>
-			<h:form>
-				<div>
-						<h:commandButton action="#{ordineController.ordiniCliente}"
-							value="Torna alla lista ordini" />
-					</div></h:form></li>
-			</ul>
+			</table>
+		</h:form>
+		<h:form>
+			<h:commandLink styleClass="btn btn-success"
+				action="faces/areaUtente.jsp" value="Indietro" />
+		</h:form>
 
 
-
-
-		<!--/row-->
 
 		<hr>
 		<footer>

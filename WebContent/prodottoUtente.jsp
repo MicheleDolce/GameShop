@@ -33,11 +33,14 @@
     <![endif]-->
 
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 
 
@@ -92,38 +95,21 @@ body {
 			</div>
 
 		</div>
-	<h1>-----Dettagli Ordine-----</h1>
-			<hr></hr>
-			<div>
-				<table border="1">
-					<tr>
-						<th>Nome Prodotto</th>
-						<th>Quantita'</th>
-						<th>Prezzo</th>
-					</tr>
-					<c:forEach var="rigaOrdine" items="#{ordineController.ordine.righeOrdine}">
-						<tr>
-							<td>${rigaOrdine.prodotto.nome}</td>
-							<td>${rigaOrdine.quantita}</td>
-							<td>${rigaOrdine.prezzoUnitario}</td>
-						</tr>
-					</c:forEach>
-				</table>
-			</div>
 
-			<ul><li>
-			<h:form>
-				<div>
-						<h:commandButton action="#{ordineController.ordiniCliente}"
-							value="Torna alla lista ordini" />
-					</div></h:form></li>
-			</ul>
-
-
-
-
+		<h1>${productController.prodotto.nome}</h1>
+		<h2>Dettagli:</h2>
+		<div>Codice: ${productController.prodotto.codice}</div>
+		<div>Nome: ${productController.prodotto.nome}</div>
+		<div>Prezzo: ${productController.prodotto.prezzo}</div>
+		<div>Quantita: ${productController.prodotto.quantitaMagazzino}</div>
 		<!--/row-->
-
+		 	<h:form>
+						 	<h:commandLink styleClass="btn btn-success"
+									action="faces/areaUtente.jsp"
+									value="Indietro" />
+							</h:form>
+	<!--/row-->
+		
 		<hr>
 		<footer>
 			<p>&copy; JuggerDonuts Company 2015</p>

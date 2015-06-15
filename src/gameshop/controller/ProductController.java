@@ -31,7 +31,7 @@ public class ProductController {
 	
 	public String creaProdotto() {
 		this.prodotto = productFacade.creaProdotto(nome, descrizione, prezzo,quantitaMagazzino);
-		return "prodotto"; 
+		return "prodottoAmministrazione"; 
 	}
 	
 	public String mostraElencoProdotti() {
@@ -41,6 +41,11 @@ public class ProductController {
 	public String mostraElencoProdottiAmministratore() {
 		this.listaProdotti = productFacade.getAllProducts();
 		return "listaProdottiAmministrazione"; 
+	}
+	
+	public String mostraElencoProdottiUtente() {
+		this.listaProdotti = productFacade.getAllProducts();
+		return "listaProdottiUtente"; 
 	}
 	public String mostraElencoProdottiOrdine() {
 		this.listaProdotti = productFacade.getAllProducts();
@@ -55,6 +60,11 @@ public class ProductController {
 	public String trovaProdottoAmministratore(){
 		this.prodotto = productFacade.getProduct(codice);
 		return "prodottoAmministrazione";
+	}
+	
+	public String trovaProdottoUtente(){
+		this.prodotto = productFacade.getProduct(codice);
+		return "prodottoUtente";
 	}
 	
 	 public String trovaProdotto(){

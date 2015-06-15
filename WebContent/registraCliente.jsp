@@ -42,7 +42,7 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header"><h:form>
-					<h:outputLink styleClass="navbar-brand" value='#{request.contextPath}/faces/index.jsp'>GameShop</h:outputLink></h:form>
+					<h:outputLink styleClass="navbar-brand" value='#{request.contextPath}/index.html'>GameShop</h:outputLink></h:form>
 				</div>
 	<!--/.nav-collapse -->
 			</div>

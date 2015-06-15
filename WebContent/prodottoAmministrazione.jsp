@@ -35,7 +35,15 @@
 <body>
 	<f:view>
 		<style type="text/css">
-body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;color:red;}</style>
+body {
+	font-weight: bold;
+}
+
+body {
+	background-image: url('img/crysis.jpg') !important;
+	color: red;
+}
+</style>
 		<!-- Fixed navbar -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<span class="nav navbar-form navbar-right"> <h:form>
@@ -82,13 +90,12 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 		<div>Prezzo: ${productController.prodotto.prezzo}</div>
 		<div>Quantita: ${productController.prodotto.quantitaMagazzino}</div>
 		<!--/row-->
-		 	<h:form>
-						 	<h:commandLink styleClass="btn btn-success"
-									action="faces/amministrazione.jsp"
-									value="Indietro" />
-							</h:form>
-	<!--/row-->
-		
+		<h:form>
+			<h:commandLink styleClass="btn btn-success"
+				action="faces/amministrazione.jsp" value="Indietro" />
+		</h:form>
+		<!--/row-->
+
 		<hr>
 		<footer>
 			<p>&copy; JuggerDonuts Company 2015</p>

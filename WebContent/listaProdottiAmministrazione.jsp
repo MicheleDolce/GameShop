@@ -103,6 +103,8 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 
 
 
+		<!--/row-->
+
 		<hr>
 		<footer>
 			<p>&copy; JuggerDonuts Company 2015</p>
@@ -120,4 +122,3 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 	</f:view>
 </body>
 </html>
-

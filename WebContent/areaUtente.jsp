@@ -1,50 +1,150 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
-<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Area utente</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>GameShop</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/offcanvas.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="js/ie-emulation-modes-warning.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+
+
 <body>
-
 	<f:view>
+		<style type="text/css">
+body {
+	font-weight: bold;
+}
 
-		<h> AREA UTENTE </h>
-		<h1>-----Benvenuto-----</h1>
-			<hr></hr>
+body {
+	background-image: url('img/crysis.jpg') !important;
+	color: red;
+}
+</style>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<span class="nav navbar-form navbar-right"> <h:form>
 
-			<h2>
-				<b><u>Menu' Cliente</u></b>
-			</h2>
+					<div>
+						<h:commandLink action="#{userController.logOut}" value="LogOut" />
+					</div>
+				</h:form></span>
 
-			<h3>${userController.cliente.id}
-				${userController.cliente.cognome}</h3>
-			<div>
-				<b>Email:</b> ${userController.cliente.email}
+			<div class="container">
+				<div class="navbar-header"></div>
+				<!--/.nav-collapse -->
 			</div>
-			<p>
-				<h:form>
-					<h:commandLink action="#{ordineController.creaOrdine}"
-						value="Crea Ordine" />
-					<div>
-						<h:commandLink action="#{ordineController.ordiniCliente}"
-							value="I miei Ordini" />
+		</nav>
+
+		<div class="container">
+
+			<div class="row row-offcanvas row-offcanvas-right">
+
+				<div class="col-xs-12 col-sm-9">
+					<p class="pull-right visible-xs">
+						<button type="button" class="btn btn-primary btn-xs"
+							data-toggle="offcanvas">Toggle nav</button>
+					</p>
+					${message}
+					<div class="jumbotron">
+
+						<img src="img\GameShop.jpg" class="img-responsive" alt="veeer2"
+							width="1000" height="300">
 					</div>
-					<div>
-						<h:commandLink action="#{productController.mostraElencoProdotti}"
-							value="Catalogo Prodotti" />
-					</div>
-					<div>
-						<h:commandLink action="#{userController.logOut}"
-							value="LogOut" />
-					</div>
-				</h:form>
-			</p>
-				
-	
+
+
+
+
+				</div>
+
+			</div>
+
+		</div>
+		<h1>-AREA UTENTE-</h1>
+
+
+		<h2>${userController.cliente.nome}
+			${userController.cliente.cognome}</h2>
+		<div>
+			<b>Email:</b> ${userController.cliente.email}
+		</div>
+		<div>
+			<b>ID:</b> ${userController.cliente.id}
+		</div>
+
+
+
+
+
+
+		<h:form>
+			<h:commandButton action="#{ordineController.creaOrdine}"
+				value="Crea Ordine" />
+			<div>
+				<h:commandButton action="#{ordineController.ordiniCliente}"
+					value="I miei Ordini" />
+			</div>
+			<div>
+				<h:commandButton
+					action="#{productController.mostraElencoProdottiUtente}"
+					value="Catalogo Prodotti" />
+			</div>
+
+		</h:form>
+
+
+
+		<!--/row-->
+
+		<hr>
+		<footer>
+			<p>&copy; JuggerDonuts Company 2015</p>
+		</footer>
+		<!--/.container-->
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="js/ie10-viewport-bug-workaround.js"></script>
+		<script src="js/offcanvas.js"></script>
 	</f:view>
 </body>
 </html>
