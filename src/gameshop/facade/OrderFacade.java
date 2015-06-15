@@ -9,6 +9,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import gameshop.model.Ordine;
+import gameshop.model.RigaOrdine;
 import gameshop.model.Utente;
 
 import javax.ejb.Stateless;
@@ -25,7 +26,12 @@ public class OrderFacade {
 	 private EntityManager em;
 	 
 	 public void confermaOrdine(Ordine ordine) {
-			ordine.setDataChiusura(new Date());
+		 GregorianCalendar gc = new GregorianCalendar();
+		 int anno = gc.get(Calendar.YEAR);
+		 int mese = gc.get(Calendar.MONTH) + 1;
+		 int giorno = gc.get(Calendar.DATE);
+		 Date giornoChiusura = new Date(anno,mese,giorno);
+			ordine.setDataChiusura(giornoChiusura);
 			em.persist(ordine);
 		}
 	 public Ordine creaOrdine(Utente cliente) {
@@ -48,7 +54,26 @@ public class OrderFacade {
 			Ordine ordine = em.find(Ordine.class, id);
 			return ordine;
 		}
-	 
+	 public List<Ordine> getAllOrdiniNonEvasi() {
+			List<Ordine> ordini; 
+			TypedQuery<Ordine> q = em.createQuery("SELECT o FROM Ordine o WHERE o.dataEvasione IS NULL",Ordine.class);
+			ordini = q.getResultList();
+			return ordini;
+		}
+	 public String evadiOrdine(Ordine ordine) {
+			for(RigaOrdine ro: ordine.getRigheOrdine()) {
+				Float quantitaInMagazzino = ro.getProdotto().getQuantitaMagazzino();
+				Integer quantitaRichiesta = ro.getQuantita();
+				if(quantitaInMagazzino>=quantitaRichiesta) {
+					ro.getProdotto().rimuoviProdottoInMagazzino(quantitaRichiesta);
+				} else {
+					return "evasioneNonRiuscita";
+				}
+			}
+			ordine.setDataEvasione(new Date());
+			em.merge(ordine);
+			return "evasioneRiuscita";
+	 }
 	 
 }
 

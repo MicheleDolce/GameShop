@@ -93,6 +93,9 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 					action="#{productController.mostraElencoProdottiAmministratore}"
 					value="Vedi elenco prodotti" />
 			</h:form>
+			<h:form>
+					<li><h:commandLink action="#{ordineController.ordiniNonEvasi}" value="Evadi Ordine" /></li>
+			</h:form>
 		</ul>
 
 		<!--/row-->

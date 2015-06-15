@@ -15,6 +15,9 @@ import gameshop.model.Ordine;
 
 
 
+
+
+
 import java.util.Date;
 import java.util.List;
 
@@ -51,7 +54,10 @@ public class OrdineController {
 		this.userController.setOrdineTemp(null);
 		return "ordineConcluso";
 	}
-
+	public String ordiniNonEvasi() {
+		listaOrdini = ordineFacade.getAllOrdiniNonEvasi();
+		return "ordiniNonEvasi";
+	}
 	public String creaOrdine() {
 		this.ordine = ordineFacade.creaOrdine(this.userController.getCliente());
 		this.userController.setOrdineTemp(this.ordine);
@@ -81,7 +87,21 @@ public class OrdineController {
 		this.ordine = ordineFacade.getOrdine(id);
 		return "ordine";
 	}
+	public String tornaAlMenuAmministratore() {
+		this.ordine = null;
+		return "amministrazione";
+	}
 	
+	public String evadiOrdine() {
+		String idOrdine = FacesContext.getCurrentInstance()
+				.getExternalContext().getRequestParameterMap().get("id");
+		Long id = Long.valueOf(idOrdine);
+		ordine = ordineFacade.getOrdine(id);
+		String nextPage = ordineFacade.evadiOrdine(ordine);
+		this.ordine = null;
+		this.listaOrdini=null; /*provare a aliminarli e vedere se funge*/
+		return nextPage;
+	}
 	
 	public Long getId() {
 		return id;

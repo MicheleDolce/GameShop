@@ -29,6 +29,11 @@ public class Prodotto {
 	}
 
 	
+	public void rimuoviProdottoInMagazzino(Integer quantita) {
+		this.quantitaMagazzino = this.quantitaMagazzino-quantita;
+	}
+
+	
 	// Metodi get e set
 	
 	
