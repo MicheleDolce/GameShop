@@ -15,7 +15,7 @@ public class AdministratorController {
 	private Long id;
 	private String nome;
 	private String password;
-	private Utente admin;
+	
 
 	/*@EJB
 	private AdministratorFacade adminFacade;*/
@@ -44,13 +44,5 @@ public class AdministratorController {
 		this.password = password;
 	}
 
-	/*public AdministratorFacade getAdminFacade() {
-		return adminFacade;
-	}
-
-	public void setAdminFacade(AdministratorFacade adminFacade) {
-		this.adminFacade = adminFacade;
-	}*/
 	
-	/*commento*/
 }

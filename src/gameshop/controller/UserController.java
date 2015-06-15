@@ -2,6 +2,7 @@ package gameshop.controller;
 
 import gameshop.facade.ProductFacade;
 import gameshop.facade.UserFacade;
+import gameshop.model.Ordine;
 import gameshop.model.Prodotto;
 import gameshop.model.Utente;
 
@@ -19,6 +20,7 @@ import javax.faces.context.FacesContext;
 @ManagedBean
 public class UserController {
 	
+	
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
 	private String nome;
@@ -28,9 +30,11 @@ public class UserController {
 	private Float annoDiNascita;
 	private String email;
 	private String indirizzo;
+	private boolean loggato =false;
 	private Utente cliente;
 	private List<Utente> listaUtenti;
-	
+	private Ordine ordineTemp;
+	private Prodotto prodottoTemp;
 	
 	
 	@EJB
@@ -47,17 +51,23 @@ public class UserController {
 		String paginaSuccessiva;
 		this.cliente= userFacade.getUtente(id);
 		if(this.cliente!=null){
+			this.loggato=true;
 			paginaSuccessiva="areaUtente";
 		}else{
-			 FacesMessage msg = new FacesMessage("Errore email errata!", "L'email è incorretta");
-			 msg.setSeverity(FacesMessage.SEVERITY_ERROR);
-			 FacesContext.getCurrentInstance().addMessage(null, msg);
 			 paginaSuccessiva="loginCliente";
 		}
 		
 		return paginaSuccessiva;
 	}
+	public String logOut() {
+		this.cliente = null;
+		this.loggato = false;
+		return "index";
+	}
 	
+	public String tornaAreaUtente(){
+		return "areaUtente";
+	}
 	public String mostraElencoUtenti(){
 		this.listaUtenti=userFacade.mostraElencoUtenti();
 		return "listaUtenti";
@@ -147,6 +157,30 @@ public class UserController {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public boolean isLoggato() {
+		return loggato;
+	}
+
+	public void setLoggato(boolean loggato) {
+		this.loggato = loggato;
+	}
+
+	public Ordine getOrdineTemp() {
+		return ordineTemp;
+	}
+
+	public void setOrdineTemp(Ordine ordineTemp) {
+		this.ordineTemp = ordineTemp;
+	}
+
+	public Prodotto getProdottoTemp() {
+		return prodottoTemp;
+	}
+
+	public void setProdottoTemp(Prodotto prodottoTemp) {
+		this.prodottoTemp = prodottoTemp;
 	}
 	
 	

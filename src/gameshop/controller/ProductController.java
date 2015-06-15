@@ -8,9 +8,10 @@ import gameshop.facade.ProductFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 
 
-
+@RequestScoped
 @ManagedBean
 public class ProductController {
 	
@@ -22,6 +23,8 @@ public class ProductController {
 	private Float quantitaMagazzino;
 	private Prodotto prodotto;
 	private List<Prodotto> listaProdotti;
+	@ManagedProperty(value = "#{userController}")
+	private UserController userController;
 	
 	@EJB
 	private ProductFacade productFacade;
@@ -38,6 +41,10 @@ public class ProductController {
 	public String mostraElencoProdottiAmministratore() {
 		this.listaProdotti = productFacade.getAllProducts();
 		return "listaProdottiAmministrazione"; 
+	}
+	public String mostraElencoProdottiOrdine() {
+		this.listaProdotti = productFacade.getAllProducts();
+		return "listaProdottiOrdine"; 
 	}
 	
 	public String trovaProdotto(Long codice){
@@ -59,6 +66,12 @@ public class ProductController {
 		this.prodotto = productFacade.modificaQuantita(codice, quantitaMagazzino);
 		return "prodottoAmministrazione";
 	}
+	public String prodottoPerOrdine() {
+		this.prodotto = productFacade.getProduct(codice);
+		this.userController.setProdottoTemp(this.prodotto);
+		return "inserisciQuantita";
+	}
+
 
 	
 	//Metodi get e set
@@ -106,6 +119,22 @@ public class ProductController {
 	}
 	public void setListaProdotti(List<Prodotto> listaProdotti) {
 		this.listaProdotti = listaProdotti;
+	}
+
+	public UserController getUserController() {
+		return userController;
+	}
+
+	public void setUserController(UserController userController) {
+		this.userController = userController;
+	}
+
+	public ProductFacade getProductFacade() {
+		return productFacade;
+	}
+
+	public void setProductFacade(ProductFacade productFacade) {
+		this.productFacade = productFacade;
 	}
 	
 	
