@@ -75,25 +75,35 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 			</div>
 
 		</div>
-		<h1>Lista Utenti</h1>
-		<h:form>
-			<table>
-				<tr>
-					<th>Id</th><th>Email</th>
+			
+		<div class="container">
+  <h2>Lista Ordini</h2>
+    
+  <table class="table">
+    <thead>
+      
+    </thead>
+    <tbody>
+     <tr>
+				<th>Id</th><th>Nome</th><th>Cognome</th>	<th>Email</th>	
 				</tr>
-				<c:forEach var="cliente" items="#{userController.listaUtenti}">
+				
+				<c:forEach var="utente" items="#{userController.listaUtenti}">
 					<tr>
-						<td><h:commandLink
-								action="#{userController.trovaUtenteAmministrazione}"
-								value="#{cliente.id}">
-								<f:param name="id" value="#{cliente.id}" />
-							</h:commandLink></td>
-						<td>${cliente.email}</td>
+						<td>${utente.id}</td>
+						
+						<td>${utente.nome}</td>
+					
+				    	<td>${utente.cognome}</td>
+					
+						<td>${utente.email}</td>
 					</tr>
 				</c:forEach>
 
-			</table>
-		</h:form>
+				
+    </tbody>
+  </table>
+</div>
 			<h:form>
 			<h:commandLink styleClass="btn btn-success"
 				action="faces/amministrazione.jsp" value="Indietro" />

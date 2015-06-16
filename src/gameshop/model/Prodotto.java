@@ -1,4 +1,6 @@
 package gameshop.model;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.GroupSequence;
 @Entity
@@ -19,6 +21,9 @@ public class Prodotto {
 	
 	@Column(nullable=false)
 	private Float quantitaMagazzino;
+	
+	@ManyToMany(mappedBy = "prodotti")
+	private List<Fornitore> fornitori;
 	
 	public Prodotto(String nome, String descrizione, Float prezzo,Float quantitaMagazino){
 		this.nome = nome;

@@ -76,19 +76,30 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 
 		</div>
 
-		<h1>${userController.cliente.nome}</h1>
-		<h2>Dettagli:</h2>
-		<div>Nome: ${userController.cliente.nome}</div>
-		<div>Cognome: ${userController.cliente.cognome}</div>
-		<div>Id: ${userController.cliente.id}</div>
-		<div>Email: ${userController.cliente.email}</div>
-		<h:form>
+<h1>-----Dettagli Ordine-----</h1>
+			<hr></hr>
+			<div>
+				<table border="1">
+					<tr>
+						<th>Nome Prodotto</th>
+						<th>Quantita'</th>
+						<th>Prezzo</th>
+					</tr>
+					<c:forEach var="rigaOrdine" items="#{ordineController.ordine.righeOrdine}">
+						<tr>
+							<td>${rigaOrdine.prodotto.nome}</td>
+							<td>${rigaOrdine.quantita}</td>
+							<td>${rigaOrdine.prezzoUnitario}</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+<h:form>
 			<h:commandLink styleClass="btn btn-success"
-				action="faces/amministrazione.jsp" value="Indietro" />
+				action="faces/recuperaIndirizzoCliente.jsp" value="Indietro" />
 		</h:form>
-		
-	<!--/row-->
-		
+<!--/row-->
+
 		<hr>
 		<footer>
 			<p>&copy; JuggerDonuts Company 2015</p>
@@ -103,8 +114,9 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="js/ie10-viewport-bug-workaround.js"></script>
 		<script src="js/offcanvas.js"></script>
+
+
 	</f:view>
 </body>
 </html>
-
 

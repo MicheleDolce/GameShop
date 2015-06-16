@@ -84,18 +84,21 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 			<li><a
 				href='<c:url value="/faces/recuperaIndirizzoCliente.jsp" />'>Recupera
 					indirizzo cliente</a></li>
-			<h:form>
+			<li><h:form>
 				<h:commandLink action="#{userController.mostraElencoUtenti}"
 					value="Vedi elenco utenti" />
-			</h:form>
-			<h:form>
+			</h:form></li>
+			<li><h:form>
 				<h:commandLink
 					action="#{productController.mostraElencoProdottiAmministratore}"
 					value="Vedi elenco prodotti" />
-			</h:form>
-			<h:form>
+			</h:form></li>
+			<li><h:form>
 					<li><h:commandLink action="#{ordineController.ordiniNonEvasi}" value="Evadi Ordine" /></li>
-			</h:form>
+			</h:form></li>
+			<li><a
+				href='<c:url value="/faces/registraCliente.jsp" />'>Registra cliente</a></li>
+			
 		</ul>
 
 		<!--/row-->

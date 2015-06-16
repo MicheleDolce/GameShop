@@ -75,20 +75,47 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 			</div>
 
 		</div>
+		
+		
+		<div class="container">
+  <h2>Lista Ordini</h2>
+    
+  <table class="table">
+    <thead>
+      
+    </thead>
+    <tbody>
+     <tr>
+				<th>Id</th><th>Data apertura</th><th>Data chiusura</th>	<th>Data evasione</th>	
+				</tr>
+				
+				<c:forEach var="ordine" items="#{ordineController.listaOrdini}">
+					<tr>
+						<td>${ordine.id}</td>
+						
+						<td>${ordine.dataApertura}</td>
+					
+				    	<td>${ordine.dataChiusura}</td>
+					
+						<td>${ordine.dataEvasione}</td>
+					</tr>
+				</c:forEach>
 
-		<h1>${userController.cliente.nome}</h1>
-		<h2>Dettagli:</h2>
-		<div>Nome: ${userController.cliente.nome}</div>
-		<div>Cognome: ${userController.cliente.cognome}</div>
-		<div>Id: ${userController.cliente.id}</div>
-		<div>Email: ${userController.cliente.email}</div>
+				
+    </tbody>
+  </table>
+</div>
+
 		<h:form>
-			<h:commandLink styleClass="btn btn-success"
-				action="faces/amministrazione.jsp" value="Indietro" />
-		</h:form>
-		
-	<!--/row-->
-		
+						 	<h:commandLink styleClass="btn btn-success"
+									action="faces/recuperaIndirizzoCliente.jsp"
+									value="Indietro" />
+							</h:form>
+							
+							
+
+		<!--/row-->
+
 		<hr>
 		<footer>
 			<p>&copy; JuggerDonuts Company 2015</p>
@@ -106,5 +133,3 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 	</f:view>
 </body>
 </html>
-
-

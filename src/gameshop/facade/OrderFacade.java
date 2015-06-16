@@ -9,6 +9,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 import gameshop.model.Ordine;
+import gameshop.model.Prodotto;
 import gameshop.model.RigaOrdine;
 import gameshop.model.Utente;
 
@@ -16,6 +17,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaQuery;
 
 @Stateless
 public class OrderFacade {
@@ -75,6 +77,14 @@ public class OrderFacade {
 			return "evasioneRiuscita";
 	 }
 	 
+	 
+	 public List<Ordine> getAllOrdini(){
+		 CriteriaQuery<Ordine> cq = em.getCriteriaBuilder().createQuery(Ordine.class);
+			cq.select(cq.from(Ordine.class));
+			List<Ordine> ordini = em.createQuery(cq).getResultList();
+			return ordini;
+		 
+	 }
 }
 
 	 

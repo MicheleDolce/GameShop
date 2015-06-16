@@ -47,6 +47,8 @@ public class ProductFacade {
 		cq.select(cq.from(Prodotto.class));
 		List<Prodotto> prodotti = em.createQuery(cq).getResultList();
 		return prodotti;
+	
+				
 	}
 
 	public void updateProduct(Prodotto prodotto) {

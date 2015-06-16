@@ -64,9 +64,7 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 								styleClass="btn btn-success"
 								rendered="#{!userController.cliente}">Login</h:outputLink>
 
-							<h:outputLink
-								value='#{request.contextPath}/faces/registraCliente.jsp'
-								styleClass="btn btn-link" rendered="#{!userController.cliente}">Registrati</h:outputLink>
+							
 							<h:outputLink
 								value='#{request.contextPath}/faces/loginAmministratore.jsp'
 								styleClass="btn btn-link">Amministrazione</h:outputLink>

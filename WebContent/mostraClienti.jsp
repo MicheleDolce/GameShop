@@ -76,19 +76,23 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 
 		</div>
 
-		<h1>${userController.cliente.nome}</h1>
-		<h2>Dettagli:</h2>
-		<div>Nome: ${userController.cliente.nome}</div>
-		<div>Cognome: ${userController.cliente.cognome}</div>
-		<div>Id: ${userController.cliente.id}</div>
-		<div>Email: ${userController.cliente.email}</div>
-		<h:form>
-			<h:commandLink styleClass="btn btn-success"
-				action="faces/amministrazione.jsp" value="Indietro" />
-		</h:form>
+
+<h1>Cliente ordine:${ordineController.ordine.id}</h1>
+		<div>Nome: ${ordineController.ordine.getUtente().nome}</div>
+		<div>Cognome: ${ordineController.ordine.getUtente().cognome}</div>
+		<div>Indirizzo: ${ordineController.ordine.getUtente().indirizzo}</div>
+		<div>Email: ${ordineController.ordine.getUtente().email}</div>
+		<div>Data di nascita: ${ordineController.ordine.getUtente().dataDiNascita}</div>
 		
-	<!--/row-->
-		
+
+<h:form>
+						 	<h:commandLink styleClass="btn btn-success"
+									action="faces/amministrazione.jsp"
+									value="Indietro" />
+							</h:form>
+
+<!--/row-->
+
 		<hr>
 		<footer>
 			<p>&copy; JuggerDonuts Company 2015</p>
@@ -106,5 +110,7 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 	</f:view>
 </body>
 </html>
+
+
 
 

@@ -87,6 +87,10 @@ public class OrdineController {
 		this.ordine = ordineFacade.getOrdine(id);
 		return "ordine";
 	}
+	public String trovaOrdineAmministrazione(){
+		this.ordine = ordineFacade.getOrdine(id);
+		return "ordineAmministrazione";
+	}
 	public String tornaAlMenuAmministratore() {
 		this.ordine = null;
 		return "amministrazione";
@@ -99,9 +103,25 @@ public class OrdineController {
 		ordine = ordineFacade.getOrdine(id);
 		String nextPage = ordineFacade.evadiOrdine(ordine);
 		this.ordine = null;
-		this.listaOrdini=null; /*provare a aliminarli e vedere se funge*/
+		this.listaOrdini=null; 
 		return nextPage;
 	}
+	
+	public String mostraElencoOrdini(){
+		this.listaOrdini = ordineFacade.getAllOrdini();
+		return "listaOrdini";
+	}
+	
+	
+	public String mostraCliente(){
+		this.ordine = ordineFacade.getOrdine(id);
+		return "mostraClienti";
+	}
+	
+	/*Metodi set e get */
+	
+	
+	
 	
 	public Long getId() {
 		return id;

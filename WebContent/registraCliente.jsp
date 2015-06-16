@@ -35,16 +35,19 @@
 
 <body>
 	<f:view>
-	<style type="text/css">
-body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;color:red;}
-</style>
+		<style type="text/css">
+body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;color:red;}</style>
 		<!-- Fixed navbar -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<span class="nav navbar-form navbar-right"> <h:form>
+
+					<h:outputLink value='#{request.contextPath}/faces/index.jsp'
+						styleClass="btn btn-success">Logout</h:outputLink>
+				</h:form></span>
+
 			<div class="container">
-				<div class="navbar-header"><h:form>
-					<h:outputLink styleClass="navbar-brand" value='#{request.contextPath}/index.html'>GameShop</h:outputLink></h:form>
-				</div>
-	<!--/.nav-collapse -->
+				<div class="navbar-header"></div>
+				<!--/.nav-collapse -->
 			</div>
 		</nav>
 
@@ -68,7 +71,7 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 
 
 				</div>
-		
+
 			</div>
 
 		</div>
