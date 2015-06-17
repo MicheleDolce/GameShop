@@ -36,7 +36,7 @@ public class Utente {
 	@Column(nullable=false)
 	private String indirizzo;
 	
-	@Column(nullable=false)
+	@Column(nullable=false, unique=true)
 	private String email;
 
 	

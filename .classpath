@@ -84,6 +84,7 @@
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/openwebbeans-jsf-1.2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/openwebbeans-spi-1.2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/openwebbeans-web-1.2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/postgresql-9.4-1201.jdbc41.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/quartz-openejb-shade-2.2.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/serp-1.14.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/servlet-api.jar"/>
@@ -119,6 +120,5 @@
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/xbean-naming-4.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/xbean-reflect-4.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/apache-tomee-jaxrs-1.7.1/lib/xmlschema-core-2.0.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Wansener/Desktop/Uni/postgresql-9.4-1201.jdbc41.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

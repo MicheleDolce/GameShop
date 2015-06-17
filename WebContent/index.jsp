@@ -94,7 +94,7 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 
 					<div class="container">
 						<h2>GAME SHOP</h2>
-						<div class="well">Game Shop e' una societa' di vendite online.</div>
+						<div class="well">Su Game Shop  puoi acquistare online ed approfittare delle offerte sui migliori videogiochi. Sicurezza e professionalita' garantiti!</div>
 					</div>
 
 
@@ -117,7 +117,7 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
     </div>
     <div class="col-md-4">
       <a href="img/fifa.jpg" class="thumbnail">
-        <p>Vinvi il mondiale con la tua squadra del cuore.</p>
+        <p>Vivi il mondiale con la tua squadra del cuore.</p>
         <img src="img/fifa.jpg" alt="Moustiers Sainte Marie" style="width:150px;height:150px">
       </a>
     </div>

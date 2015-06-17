@@ -102,6 +102,10 @@ body{font-weight:bold;}body{background-image: url('img/crysis.jpg') !important;c
 				<h:commandButton value="Submit"  action="#{userController.registraUtente}"/>
 			</div>
 		</h:form>
+		<h:form>
+			<h:commandLink styleClass="btn btn-success"
+				action="faces/amministrazione.jsp" value="Indietro" />
+		</h:form>
 		
 	<!--/row-->
 		

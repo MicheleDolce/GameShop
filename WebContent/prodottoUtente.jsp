@@ -101,7 +101,7 @@ body {
 		<div>Codice: ${productController.prodotto.codice}</div>
 		<div>Nome: ${productController.prodotto.nome}</div>
 		<div>Prezzo: ${productController.prodotto.prezzo}</div>
-		<div>Quantita: ${productController.prodotto.quantitaMagazzino}</div>
+	
 		<!--/row-->
 		 	<h:form>
 						 	<h:commandLink styleClass="btn btn-success"

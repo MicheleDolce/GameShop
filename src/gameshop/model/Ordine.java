@@ -18,6 +18,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Ordine {
@@ -27,10 +29,13 @@ public class Ordine {
 	private Long id;
 	
 	@Column(nullable = false)
+	@Temporal(TemporalType.DATE)
 	private Date dataApertura;
 	
+	@Temporal(TemporalType.DATE)
 	private Date dataChiusura;
 	
+	@Temporal(TemporalType.DATE)
 	private Date dataEvasione;
 	
 	
